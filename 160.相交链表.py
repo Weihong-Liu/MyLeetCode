@@ -40,3 +40,15 @@ class Solution:
 
 # @lc code=end
 
+
+class Solution2:
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+        if( headA == None or headB == None ): 
+            return None
+        pointA = headA
+        pointB = headB
+
+        while pointA != pointB:
+            pointA = pointA.next if pointA else headB
+            pointB = pointB.next if pointB else headA
+        return pointA
